@@ -19,8 +19,14 @@
     //creating a canvas
     canvas = new fabric.Canvas("canvas");
     //setting dimentions
-    canvas.setHeight(window.innerHeight - 126);
-    canvas.setWidth(window.innerWidth - 600);
+    if(window.innerWidth > 1366){
+      canvas.setHeight(window.innerHeight - 126);
+      canvas.setWidth(window.innerWidth - 600);
+    }else{
+      canvas.setHeight(window.innerHeight - 120);
+      canvas.setWidth(window.innerWidth - 126);
+    }
+    
     //canvas is dragable alaway to pan
     canvas.isDragging = true;
     canvas.hoverCursor = "pointer";

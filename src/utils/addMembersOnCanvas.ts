@@ -9,7 +9,7 @@ export default function addMembersOnCanvas(members : Member[], canvas:Canvas){
         var labeledRect = new memberCard({
           width: cardWidth,
           height: cardHeight,
-          left:(window.innerWidth -600) / 2 - 200 - canvas.viewportTransform[4] * canvas.viewportTransform[3],
+          left: canvas.width / 2 - 200 - canvas.viewportTransform[4] * canvas.viewportTransform[3],
           top: -100,
           rx: 20,
           ry: 20,
