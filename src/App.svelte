@@ -33,7 +33,7 @@
     canvas.lastPosX = 0;
     canvas.lastPosY = 0;
     //Adding keydown event listener as Fabric js canvas does not support this event
-    document.addEventListener("wheel", (e: WheelEvent) => {
+    document.getElementById('scrollview').addEventListener("wheel", (e: WheelEvent) => {
         e.preventDefault();
         e.stopPropagation();
         console.log(canvas.lastPosX , canvas.lastPosY)
@@ -56,8 +56,6 @@
         imageList = newimageList;
       }
     });
-
-
     //Adding event Listeners
     addListeners(canvas);
   });
@@ -83,7 +81,10 @@
         on:input={(e) => selectMemebrsdebounced(e)}
         placeholder="Search..."
       />
-      <canvas id="canvas" />
+      <div id='scrollview'>
+        <canvas id="canvas" />
+      </div>
+      
     </div>
     <div class="imageDisplay">
       {#if imageList.length > 0}
