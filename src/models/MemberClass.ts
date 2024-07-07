@@ -20,6 +20,7 @@ let memberCard = fabric.util.createClass(fabric.Rect, {
     },
 
     _render: function (ctx: any) {
+      console.log(ctx)
       let cardWidth = this.width;
       let cardHeight = this.height;
     
@@ -35,6 +36,7 @@ let memberCard = fabric.util.createClass(fabric.Rect, {
 
       let img = new Image();
       img.crossOrigin="anonymous";
+      img.draggable = true;
       img.onload = function () {
         ctx.save();
         ctx.beginPath();

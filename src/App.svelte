@@ -30,6 +30,7 @@
     document.addEventListener("wheel", (e: WheelEvent) => {
         e.preventDefault();
         e.stopPropagation();
+        console.log(canvas.lastPosX , canvas.lastPosY)
         canvas.viewportTransform[4] = canvas.lastPosX + e.deltaX;
         canvas.viewportTransform[5] = canvas.lastPosY + e.deltaY;
         canvas.requestRenderAll();
@@ -50,7 +51,7 @@
       }
     });
 
-    
+
     //Adding event Listeners
     addListeners(canvas);
   });

@@ -51,3 +51,10 @@
     padding: 0 20px;
     color: #000;
 }
+
+
+@media screen and (max-width: 1366px) {
+  .imageDisplay{
+    display: none;
+  }
+}
