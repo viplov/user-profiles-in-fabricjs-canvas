@@ -5,7 +5,6 @@ import { cardHeight, cardWidth, shadow,gradient, hoverShadow } from "../data/con
 export default function addListeners(canvas : Canvas){
       //hover effects
       canvas.on("mouse:over", function (opt : fabric.IGroupOptions) {
-        console.log(canvas)
         if (opt.target) {
           opt.target.set("stroke", "#4473b6");
           opt.target.set("strokeWidth", 3);
@@ -33,8 +32,7 @@ export default function addListeners(canvas : Canvas){
           this.lastPosY = evt.clientY;
         } else {
           this.cardMove = false;
-          opt.target.set("width", cardWidth + 10);
-          opt.target.set("height", cardHeight + 10);
+          opt.target.scale(1.05);
         }
       });
       canvas.on("mouse:move", function (this: Canvas, opt: fabric.IGroupOptions) {
@@ -61,12 +59,10 @@ export default function addListeners(canvas : Canvas){
           this.lastPosY = this.viewportTransform[5];
         } else if (!this.cardMove) {
           window?.open(opt.target.gitUrl, "_blank").focus();
-          opt.target.set("width", cardWidth);
-          opt.target.set("height", cardHeight);
+          opt.target.scale(1);
         } else {
           this.cardMove = false;
-          opt.target.set("width", cardWidth);
-          opt.target.set("height", cardHeight);
+          opt.target.scale(1);
         }
       });
   
